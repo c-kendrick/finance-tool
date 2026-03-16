@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/budget.ico">
+    
+    <title>Money Budget Form</title>
+</head>
+<body>
+    <main>
+        <div class="opening">
+            <h1>BUDGETING TOOL</h1>
+            <h2>Version 12</h2>
+            <p>Take charge of your money with our online budgeting tool. 
+               It's easy to create and manage your budget, track your spending, 
+               and make informed financial decisions. Our tool offers customizable features 
+               and helpful tips to help you achieve your financial goals. Get started today 
+               and take the first step towards financial success.</p>
+        </div>
+
+        <div class="categories-wrapper">
+            <form id="money-form">
+                    <fieldset>
+                        <legend>Income</legend>
+                        <label for="income-date">Date:</label>
+                        <input type="date" id="income-date" name="income-date">
+                        <label for="income-owner">Owner:</label>
+                        <select id="income-owner" name="income-owner">
+                            <option value="">Select an owner</option>
+                            <option value="Yours"></option>
+                            <option value="Other">Other</option>
+                        </select>
+                    
+                        <label for="income-description">Description:</label>
+                        <input type="text" id="income-description" name="income-description">
+                        
+                        <label for="income-amount">Amount:</label>
+                        <input type="number" id="income-amount" name="income-amount" step="0.01">
+                        
+                        <button type="button" id="add-income">Add Income</button>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Expenses</legend>
+                        <label for="expense-date">Date:</label>
+                        <input type="date" id="expense-date" name="expense-date">
+                        
+                        <label for="expense-category">Category:</label>
+                        <select id="expense-category" name="expense-category">
+                            <option value="">Select a category</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Groceries">Groceries</option>
+                            <option value="Clothes">Clothes</option>
+                            <option value="Take-Out">Take-Out</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Gym">Gym</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        
+                        <label for="expense-description">Description:</label>
+                        <input type="text" id="expense-description" name="expense-description">
+                        
+                        <label for="expense-amount">Amount:</label>
+                        <input type="number" id="expense-amount" name="expense-amount" step="0.01">
+                        
+                        <button type="button" id="add-expense">Add Expense</button>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Upcoming</legend>
+                        <label for="upcoming-due-date">Due Date:</label>
+                        <input type="date" id="upcoming-due-date" name="upcoming-due-date">
+                        
+                        <label for="upcoming-category">Category:</label>
+                        <select id="upcoming-category" name="upcoming-category">
+                            <option value="">Select a category</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Groceries">Groceries</option>
+                            <option value="Clothes">Clothes</option>
+                            <option value="Take-Out">Take-Out</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Gym">Gym</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    
+                        <label for="upcoming-description">Description: (Gas, Internet etc) </label>
+                        <input type="text" id="upcoming-description" name="upcoming-description">
+                        
+                        <label for="upcoming-amount">Amount:</label>
+                        <input type="number" id="upcoming-amount" name="upcoming-amount" step="0.01">
+                        
+                        <button type="button" id="add-upcoming">Add Upcoming</button>
+                    </fieldset>
+            </form>
+        </div>
+        
+        <div class="totals-added-wrapper">
+            <div class="added-wrapper">
+                <section class="added-section">
+                    <h2>Added Income</h2>
+                    <ul id="income-list"></ul>
+                </section>
+    
+                <section class="added-section">
+                    <h2>Added Expenses</h2>
+                    <ul id="expense-list"></ul>
+                </section>
+            </div>
+    
+            <div class="totals-wrapper">
+                <section class="added-section">
+                    <h2>Upcoming Bills</h2>
+                    <ul id="upcoming-list"></ul>
+                </section>
+            
+    
+            
+                <section>
+                    <h2>Totals</h2>
+                    <p>Total Income: <span id="total-income">0</span></p>
+                    <p>Total Expenses: <span id="total-expenses">0</span></p>
+                    <p>Total Savings: <span id="total-savings">0</span></p>
+                </section>
+            </div>
+
+        </div>
+
+        
+        <div class="all-time-charts">
+            <h1 id="yearlysnapshot"></h1>
+
+            <div class="chart-wrapper">
+                <div class="old-charts"> 
+                    <div class="all-time-line-chart">
+                        <canvas id="all-time-line-chart"></canvas>
+                    </div>
+                    <div class="all-time-category-bar-chart">
+                        <canvas id="all-time-category-bar-chart"></canvas>
+                    </div>
+                </div>
+
+
+                <div class="new-charts">
+                    <div class="all-time-savings-line-chart">
+                        <canvas id="all-time-savings-line-chart"></canvas>
+                    </div>
+                    <div class="all-time-pie-chart">
+                        <canvas id="all-time-pie-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="weekly-snapshot">
+            <h1>Weekly Snapshot</h1>
+            <section>
+                <p>Total Weekly Income: <span id="total-weekly-income">0</span></p>
+                <p>Total Weekly Expenses: <span id="total-weekly-expenses">0</span></p>
+                <p>Total Weekly Savings: <span id="total-weekly-savings">0</span></p>
+            </section>
+
+
+            <div class="chart-wrapper">
+                <div class="old-charts"> 
+                    <div class="line-chart">
+                        <canvas id="line-chart"></canvas>
+                    </div>
+                    <div class="weekly-category-bar-chart">
+                        <canvas id="weekly-category-bar-chart"></canvas>
+                    </div>
+                </div>
+
+
+                <div class="new-charts">
+                    <div class="weekly-savings-line-chart">
+                        <canvas id="weekly-savings-line-chart"></canvas>
+                    </div>
+                    <div class="pie-chart">
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="monthly-snapshot">
+            <h1>Monthly Snapshot</h1>
+            <section>
+                <p>Total Monthly Income: <span id="total-monthly-income">0</span></p>
+                <p>Total Monthly Expenses: <span id="total-monthly-expenses">0</span></p>
+                <p>Total Monthly Savings: <span id="total-monthly-savings">0.00</span></p>
+            </section>
+
+
+            <div class="chart-wrapper">
+                <div class="old-charts"> 
+                    <div class="monthly-line-chart">
+                        <canvas id="monthly-line-chart"></canvas>
+                    </div>
+                    <div class="monthly-category-bar-chart">
+                        <canvas id="monthly-category-bar-chart"></canvas>
+                    </div>
+                </div>
+
+
+                <div class="new-charts">
+                    <div class="monthly-savings-line-chart">
+                        <canvas id="monthly-savings-line-chart"></canvas>
+                    </div>
+                    <div class="monthly-pie-chart">
+                        <canvas id="monthly-pie-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+    </main>
+
+    <script src="javascript/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
