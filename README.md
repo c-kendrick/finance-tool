@@ -1,20 +1,26 @@
+## Core Features
+* **Dashboard Analytics:** Visualises income, expenses, and savings via dynamic charts.
+* **Expense Tracking:** Allows users to log, categorise, and delete daily transactions.
+* **Local State Management:** Persists user data securely across sessions without requiring an account.
+[View site here](https://c-kendrick.github.io/finance-tool/)
+
 ## Technologies Used
 
 ### Vanilla JavaScript (ES6)
-Rather than using React, Vue, or Angular, I wrote the entire logic in pure, vanilla JavaScript.
+I built the core logic and state management entirely in vanilla ES6 JavaScript, intentionally bypassing heavy front-end frameworks.
 
-> **Why I chose it:** For a lightweight dashboard that primarily relies on DOM manipulation and straightforward math, a heavy front-end framework would be overkill. Vanilla JS keeps the codebase simple, requires zero build steps (no Webpack or Babel configurations), and makes the app incredibly fast to load.
+> **Why I chose it:** For a lightweight dashboard focused on DOM manipulation and data processing, a large framework introduces unnecessary overhead. Vanilla JS keeps the codebase maintainable, ensures zero build-step bloat (no Webpack or Babel configurations), and delivers exceptionally fast loading times.
 
 ---
 
 ### Chart.js
-A finance tracker is useless without good visuals. I used Chart.js to handle all the graphical representations of my data.
+To translate raw financial data into readable metrics, I integrated Chart.js for all graphical representations.
 
-> **Why I chose it:** It’s an open-source, canvas-based library that makes building responsive charts a breeze. With just a few lines of configuration, I was able to implement dynamic **Pie charts** (for Income vs. Expenses), **Line charts** (for tracking daily savings trends), and **Bar charts** (for breaking down expenses by category). It does the heavy lifting for data visualization so I didn't have to reinvent the wheel.
+> **Why I chose it:** It’s a robust, canvas-based library that streamlines responsive data visualisation. It allowed me to efficiently implement dynamic **Pie charts** (Income vs. Expenses), **Line charts** (daily savings trends), and **Bar charts** (expense categorisation). Leveraging an established library meant I could focus my time on the core data logic rather than custom canvas rendering.
 
 ---
 
 ### LocalStorage API
-The site uses the browser's native `localStorage` API to save data.
+The application utilises the browser's native `localStorage` API for persistent client-side data management.
 
-> **Why I chose it:** I wanted a "local-first" application. By storing the income, expense, and upcoming bill data directly in the user's browser, the app requires absolutely no backend server, no database hosting, and no complex authentication logic. It also means the user's financial data is completely private and never leaves their machine.
+> **Why I chose it:** I set out to build a strictly "local-first" application. By storing income, expense, and budget data directly in the browser, the app guarantees absolute data privacy—the user's financial metrics never leave their machine. This approach also ensures zero-latency data retrieval and demonstrates how to manage persistent state without relying on backend databases or complex authentication loops.
