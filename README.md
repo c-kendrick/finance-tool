@@ -1,6 +1,11 @@
 ## Personal Finance Dashboard
+
+<a href="https://c-kendrick.github.io/finance-tool/">
+  <img src="https://img.shields.io/badge/View%20Live%20Site-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="View Live Site">
+</a>
+
 ![Finance Dashboard Screenshot](images/finance.png)  
-[View site here](https://c-kendrick.github.io/finance-tool/)  
+
 
 # Personal Finance Dashboard
 
